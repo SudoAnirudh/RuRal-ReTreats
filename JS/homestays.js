@@ -213,14 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const priceDisplay = document.getElementById("currentPrice");
     const homestayCards = document.querySelectorAll(".homestay-card");
     const cardContainer = document.querySelector(".card-container");
-    document.querySelectorAll(".add-to-wishlist-btn").forEach(button => {
-        button.addEventListener("click", function () {
-            this.classList.toggle("active");
-            this.innerHTML = this.classList.contains("active")
-                ? '<i class="fas fa-heart" style="color:red;"></i>'
-                : '<i class="far fa-heart"></i>';
-        });
-    });
+    // Wishlist button removed from HTML, so no event listeners needed
     priceFilter.addEventListener("input", function () {
         priceDisplay.textContent = `₹${this.value}`;
     });
