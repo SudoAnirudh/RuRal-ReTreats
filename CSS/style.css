@@ -507,14 +507,12 @@ ul {
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  transition: 0.4s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 153, 255, 0.5);
 }
 
 .cta-button:hover {
   background: linear-gradient(135deg, #12bae0, #012f4b);
-  transform: scale(1.15);
-  box-shadow: 0 6px 15px rgba(1, 77, 128, 0.882);
+  /* No transform or animation for static dropdown */
 }
 
 @keyframes fadeIn {

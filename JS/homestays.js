@@ -231,9 +231,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedRating = ratingFilter.value;
         const selectedAvailability = availabilityFilter.value;
         const selectedSort = sortBy.value;
-        // Get selected amenities
-        const amenitiesCheckboxes = document.querySelectorAll('#amenitiesFilter input[type="checkbox"]:checked');
-        const selectedAmenities = Array.from(amenitiesCheckboxes).map(cb => cb.value);
+    // Get selected amenities from dropdown
+    const amenitiesDropdown = document.getElementById('amenitiesFilterDropdown');
+    const selectedAmenities = amenitiesDropdown.value !== 'all' ? [amenitiesDropdown.value] : [];
         let filteredCards = Array.from(homestayCards).filter(card => {
             const cardPrice = parseInt(card.dataset.price, 10);
             const cardBedrooms = card.dataset.bedrooms;
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let matchesBedrooms = selectedBedrooms === "all" || cardBedrooms === selectedBedrooms;
             let matchesRating = selectedRating === "all" || cardRating >= parseFloat(selectedRating);
             let matchesAvailability = selectedAvailability === "all" || cardStatus === selectedAvailability;
-            let matchesAmenities = selectedAmenities.length === 0 || selectedAmenities.every(a => amenitiesList.some(cardAmenity => cardAmenity.includes(a)));
+            let matchesAmenities = selectedAmenities.length === 0 || selectedAmenities.some(a => amenitiesList.some(cardAmenity => cardAmenity.includes(a)));
             return matchesLocation && matchesPrice && matchesBedrooms && matchesRating && matchesAvailability && matchesAmenities;
         });
         if (selectedSort === "priceLowHigh") {

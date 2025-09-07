@@ -71,15 +71,29 @@ body {
   list-style: none;
   padding: 10px;
   border-radius: 5px;
-  width: 180px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #f7f7f7;
+  color: #333;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
+#amenitiesFilterDropdown {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: #f7f7f7;
+  color: #333;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-shadow: none;
+}
   visibility: visible;
 }
 
